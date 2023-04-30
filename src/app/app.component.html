@@ -9,11 +9,16 @@
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
 
-      <button
-      (click)="OnButtonClick()">Display Details</button>
-      <p *ngif="showParagrah">Secreat password = tuna</p>
-      <p *ngFor="let click for clickList" ngClass=""></p>
+      <hr>
 
+      <!-- <button class="btn btn-primary" (click)="showParagrah = !showParagrah">Display Details</button> -->
+      <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+      <p *ngIf="showParagrah === true">Secreat password = tuna</p>
+      <div 
+        *ngFor="let logItem of log; let i = index" 
+        [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'white'}"
+        [ngClass]="{'change-Color': i >= 4}" 
+        >{{ logItem }} </div>
 
     </div>
   </div>

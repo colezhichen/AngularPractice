@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [`.fifth{}`]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   showParagrah = false;
-  clickList = [];
+  log = [];
   numberClicked = 0;
  
-  OnButtonClick(){
-    this.numberClicked += 1;
-    this.clickList.push(this.numberClicked);
+  onToggleDetails() {
+    this.showParagrah = !this.showParagrah;
+    // this.log.push(this.log.length + 1);
+    this.log.push(new Date());
   }
-
 }
